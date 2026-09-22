@@ -1,0 +1,87 @@
+stages:
+  - build
+  - deploy
+
+pages:stop_review:
+  stage: deploy
+  image: alpine:3
+  script:
+    - echo "Remove review app"
+  environment:
+    name: review/$CI_COMMIT_REF_NAME
+    action: stop
+  only:
+    - branches
+  except:
+    variables:
+      - $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+  when: manual
+
+build:
+  stage: build
+  image: node:24-trixie
+  script:
+    - npm ci
+    - npm i -D playwright-chromium
+    - npx playwright install chromium --with-deps
+    - 'sed -i "s|^sourceCode:.*|sourceCode: $CI_PROJECT_URL|" ./slides.md'
+    - export ARTIFACT_BASE="/-/${CI_PROJECT_PATH#${CI_PROJECT_ROOT_NAMESPACE}/}/-/jobs/$CI_JOB_ID/artifacts/dist/"
+    - echo "DEPLOY_URL=${CI_SERVER_PROTOCOL}://${CI_PROJECT_ROOT_NAMESPACE}.${CI_PAGES_DOMAIN}/-/${CI_PROJECT_PATH#${CI_PROJECT_ROOT_NAMESPACE}/}/-/jobs/$CI_JOB_ID/artifacts/dist/index.html" > deploy.env
+    - npm run build -- --base $ARTIFACT_BASE --download
+  artifacts:
+    paths:
+      - dist
+    reports:
+      dotenv: deploy.env
+  pages:
+    publish: dist
+  only:
+    - branches
+  except:
+    variables:
+      - $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+  environment:
+    name: review/$CI_COMMIT_REF_NAME
+    url: $DEPLOY_URL
+    deployment_tier: testing
+    on_stop: pages:stop_review
+    auto_stop_in: 1 month
+
+pages:
+  stage: deploy
+  image: node:24-trixie
+  script:
+    - npm ci
+    - npm i -D playwright-chromium
+    - npx playwright install chromium --with-deps
+    - 'sed -i "s|^sourceCode:.*|sourceCode: $CI_PROJECT_URL|" ./slides.md'
+    - npm run build -- --base ${CI_PROJECT_PATH#${CI_PROJECT_ROOT_NAMESPACE}/} --download
+  artifacts:
+    paths:
+      - dist
+  pages:
+    publish: dist
+  rules:
+    - if: "$CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH"
+  environment:
+    name: master_preview
+    url: $CI_PAGES_URL
+    deployment_tier: staging
+
+deploy:
+  stage: deploy
+  rules:
+    - if: "$CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH"
+  when: manual
+  image: node:24-trixie
+  script:
+    - npm ci
+    - npm i -D playwright-chromium
+    - npx playwright install chromium --with-deps
+    - 'sed -i "s|^sourceCode:.*|sourceCode: $CI_PROJECT_URL|" ./slides.md'
+    - npm run build -- --base /${DEPLOY_BASE} --download
+  artifacts:
+    paths:
+      - dist
+  variables:
+    DEPLOY_BASE: ""
