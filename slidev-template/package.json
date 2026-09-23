@@ -7,7 +7,6 @@
     "dev": "slidev",
     "export": "slidev export",
     "format": "prettier --write .",
-    "prepare": "simple-git-hooks",
     "lint-staged": "lint-staged"
   },
   "dependencies": {
@@ -19,16 +18,10 @@
     "@iconify/json": "^2.2.527",
     "lint-staged": "^17.5.1",
     "prettier": "^3.8.1",
-    "prettier-plugin-slidev": "^1.0.5",
-    "simple-git-hooks": "^2.14.0"
+    "prettier-plugin-slidev": "^1.0.5"
   },
   "lint-staged": {
     "*.{md,vue,ts,js,json,yml,yaml}": "prettier --write"
   },
-  "simple-git-hooks": {
-    "pre-commit": "npm run lint-staged"
-  },
-  "allowScripts": {
-    "simple-git-hooks@2.14.0": true
-  }
+  "allowScripts": {}
 }
