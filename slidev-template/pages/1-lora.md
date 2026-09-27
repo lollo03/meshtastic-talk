@@ -61,11 +61,7 @@ Sync Word: identifica la rete
 
 LoRa permette comunicazioni a distanze **assurde** (il record è di 1336 km per **LoraWan**, 331km per **Meshtastic**)
 
-<div v-click>
-
-<img src="/img/record-lora.png" width="350"  />
-
-</div>
+<img src="/img/record-lora.png" width="350"/>
 
 <div v-click>
 
@@ -88,10 +84,6 @@ Meshtastic nella sua configurazione radio tipica **in Italia** permette un valor
 <div v-click>
 
 Distinzione importante: **LoRa** non è **LoraWan**!
-
-</div>
-
-<div v-click>
 
 LoraWan è un protocollo di rete commerciale creato principalmente per le smart city, **non** c'entra nulla con Meshtastic e non è parte integrante di LoRa
 
