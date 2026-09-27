@@ -11,6 +11,7 @@ layout: center
 - **Decentralizzato**: non esiste un server centrale che può smettere di funzionare
 - **Mesh**: Tutti i dispositivi parlano tra di loro
 - **Economico**: puoi iniziare con una schedina da 10 euro
+- **Criptato**: proteggi i tuoi messaggi con la criptografia
 
 **Non** hai bisogno di **licenze radioamatoriali** o di hardware costoso per partecipare alla rete!
 
