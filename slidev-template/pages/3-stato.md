@@ -1,12 +1,13 @@
 
 
-Inserire mappa per effetto scenico
+<div class="flex items-center w-full flex-col mt-0">
+    <img src="/img/mappa.png" width="470"/>
+</div>
 
 
 ---
 
 ### LoraItalia
-
 fare slides
 
 ---

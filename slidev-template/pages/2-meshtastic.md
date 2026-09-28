@@ -222,6 +222,10 @@ Ogni radio è un **nodo** che riceve e **inoltra** i messaggi: insieme formano u
 
 ---
 
+<MeshTopology />
+
+---
+
 ### Il routing
 
 Per i messaggi broadcast Meshtastic non ha una vera e propria logica di routing (**managed flooding**): ogni nodo ritrasmette il messaggio andando a decrementare un counter HOP (TTL).
