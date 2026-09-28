@@ -53,6 +53,10 @@ src: ./pages/2-meshtastic.md
 ---
 
 ---
+src: ./pages/3-stato.md
+---
+
+---
 layout: outro-classic
 hideInToc: true
 ---
