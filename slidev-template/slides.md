@@ -17,8 +17,7 @@ duration: 45min
 # use hash instead of overwriting history.
 routerMode: hash
 
-# This is updated automatically, you do not need to change this
-sourceCode: https://gitlab.poul.org/corsi/templates/slidev-template
+sourceCode: https://github.com/lollo03/meshtastic-talk
 
 license: CC-BY-SA-4.0
 
