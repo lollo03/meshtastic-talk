@@ -1,4 +1,6 @@
 <script setup>
+const base = import.meta.env.BASE_URL
+
 const devices = [
   { file: 'rak_wismesh_tag', name: 'WisMesh Tag', role: 'Client' },
   { file: 'tracker-t1000-e', name: 'Card Tracker T1000-E', role: 'Client' },
@@ -19,7 +21,7 @@ const devices = [
       <div class="marquee-track">
         <template v-for="n in 2" :key="n">
           <div v-for="d in devices" :key="`${n}-${d.file}`" class="dev-card">
-            <img :src="`/img/devices/${d.file}.svg`" :alt="d.name" class="dev-img" />
+            <img :src="`${base}img/devices/${d.file}.svg`" :alt="d.name" class="dev-img" />
             <span class="dev-name">{{ d.name }}</span>
           </div>
         </template>
