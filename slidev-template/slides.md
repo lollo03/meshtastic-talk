@@ -25,6 +25,8 @@ credits:
   - name: Lorenzo Andreasi
     email: me@lolloandr.com
     role: [author, speaker]
+  - name: Roberto Bochet
+    role: [specialThanks]
 
 #####
 layout: intro-classic
