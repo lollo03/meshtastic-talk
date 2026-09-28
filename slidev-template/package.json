@@ -17,11 +17,14 @@
   "devDependencies": {
     "@iconify/json": "^2.2.527",
     "lint-staged": "^17.5.1",
+    "playwright-chromium": "^1.63.0",
     "prettier": "^3.8.1",
     "prettier-plugin-slidev": "^1.0.5"
   },
   "lint-staged": {
     "*.{md,vue,ts,js,json,yml,yaml}": "prettier --write"
   },
-  "allowScripts": {}
+  "allowScripts": {
+    "playwright-chromium@1.63.0": true
+  }
 }
