@@ -6,6 +6,8 @@ layout: center
 
 > An open source, off-grid, decentralized mesh network built to run on affordable, low-power devices. No cell towers. No internet. Just pure peer-to-peer connectivity.
 
+<v-clicks>
+
 - **Open source**: il firmware, le app, il protocollo è completamente open source. Esistono schede open hardware
 - **Off-grid**: funziona in montagna, in mezzo al mare, durante un blackout
 - **Decentralizzato**: non esiste un server centrale che può smettere di funzionare
@@ -13,7 +15,14 @@ layout: center
 - **Economico**: puoi iniziare con una schedina da 10 euro
 - **Criptato**: proteggi i tuoi messaggi con la criptografia
 
+</v-clicks>
+
+<v-click>
+
 **Non** hai bisogno di **licenze radioamatoriali** o di hardware costoso per partecipare alla rete!
+
+</v-click>
+
 
 ---
 layout: center
