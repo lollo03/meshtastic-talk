@@ -28,13 +28,10 @@ LoRa utilizza dei "**chirp**" per trasmettere informazioni. Un chirp non è altr
 
 </div>
 
-<div v-click>
+<v-click>
 
 Due radio LoRa per sentirsi a vicenda devono condividere:
 
-</div>
-
-<v-clicks>
 
 - Frequenza Base
 - Spreading Factor
@@ -42,7 +39,7 @@ Due radio LoRa per sentirsi a vicenda devono condividere:
 - Coding Rate
 - Sync Word
 
-</v-clicks>
+</v-click>
 
 <div v-click>
 
