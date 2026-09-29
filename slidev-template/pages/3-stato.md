@@ -35,7 +35,7 @@ La community è molto attiva e le loro configurazioni sono lo standard **_de fac
 
 ---
 
-## SOS-Italia
+## [SOS-Italia](https://www.sos-italia.net/)
 
 A differenza di LoraItalia, è una mesh più **strutturata** e con uno scopo ben preciso.
 <div class="flex items-center w-full flex-col mt-0">
