@@ -5,6 +5,26 @@
 
 <MeshGrowth class="mt-4" />
 
+<div class="sources-credit">
+  Dati presi dai servizi web di <a href="https://www.loraitalia.it/">LoraItalia</a>
+</div>
+
+<style>
+.sources-credit {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.7rem;
+  text-align: center;
+  font-family: monospace;
+  font-size: 0.6rem;
+  line-height: 1.3;
+  opacity: 0.5;
+}
+.sources-credit a {
+  border-bottom: none;
+}
+</style>
 
 ---
 
