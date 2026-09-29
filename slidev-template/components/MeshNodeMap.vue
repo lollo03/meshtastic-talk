@@ -3,6 +3,13 @@ import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from "vue"
 // maplibre-gl v6 è ESM-only, senza export di default
 import * as maplibregl from "maplibre-gl"
 import "maplibre-gl/dist/maplibre-gl.css"
+// MapLibre v6 ricava l'URL del proprio web worker a runtime da import.meta.url,
+// quindi Vite non riesce a rilevarlo: in build il file del worker non veniva
+// emesso e il browser riceveva l'HTML 404 (MIME text/html) bloccando il worker.
+// Importandolo con ?worker&url lo facciamo bundlare da Vite e lo impostiamo a mano.
+import maplibreWorkerUrl from "maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url"
+
+maplibregl.setWorkerUrl(maplibreWorkerUrl)
 
 /**
  * Mappa dei nodi Meshtastic italiani.
