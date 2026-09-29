@@ -101,12 +101,12 @@ layout: center
 
 <v-clicks>
 
-- **Open source**: il firmware, le app, il protocollo è completamente open source. Esistono schede open hardware
+- **Open source**: il firmware, le app e il protocollo sono completamente open source. Esistono schede con hardware aperto (open hardware)
 - **Off-grid**: funziona in montagna, in mezzo al mare, durante un blackout
 - **Decentralizzato**: non esiste un server centrale che può smettere di funzionare
-- **Mesh**: Tutti i dispositivi parlano tra di loro
+- **Mesh**: tutti i dispositivi parlano tra di loro
 - **Economico**: puoi iniziare con una schedina da 10 euro
-- **Criptato**: proteggi i tuoi messaggi con la criptografia
+- **Cifrato**: proteggi i tuoi messaggi con la cifratura
 
 </v-clicks>
 
@@ -125,10 +125,9 @@ layout: center
 
 - Cos'è **LoRa**
 - Cos'è **Meshtastic**
-- Perché Meshtastic e le sue **alternative**
+- Meshtastic e le **alternative** (quando sceglierlo)
 - **Come** funziona Meshtastic
 - **Legalità** in Italia
 - **Stato** in Italia
-- **Limitazioni**
 - **Come iniziare**
 

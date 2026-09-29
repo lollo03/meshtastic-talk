@@ -21,7 +21,7 @@
 <div class="step-card">
   <div class="step-num">3</div>
   <div class="step-body">
-    <div class="step-name">Flasho il firmware</div>
+    <div class="step-name">Fai il flash del firmware</div>
     <div class="step-desc">
       Usando il <a href="https://flasher.meshtastic.org/" target="_blank">web flasher</a> o esptool
     </div>
@@ -31,11 +31,11 @@
 <div class="step-card">
   <div class="step-num">4</div>
   <div class="step-body">
-    <div class="step-name">Configuro il nodo</div>
+    <div class="step-name">Configura il nodo</div>
     <ul class="step-list">
-      <li>Modem settings</li>
+      <li>Impostazioni modem</li>
       <li>Canali di default</li>
-      <li>Modifico tempo di trasmissione pacchetti</li>
+      <li>Tempi di trasmissione pacchetti</li>
     </ul>
   </div>
 </div>
@@ -46,7 +46,7 @@
 
 <div class="mt-6">
 
-> Guida ai parametri su [wiki LoraItalia](https://www.loraitalia.it/wiki/configurazione-nodi/)
+> Guida ai parametri sulla [wiki di LoraItalia](https://www.loraitalia.it/wiki/configurazione-nodi/)
 
 </div>
 
@@ -114,26 +114,26 @@
 
 ## E dopo?
 
-Non finisce qua! Puoi:
+Non finisce qui! Puoi:
 
 <div class="grid grid-cols-3 gap-5 mt-8" v-clicks>
 
 <div class="after-card">
-  <div class="after-name">Auto costruirti un'antenna</div>
+  <div class="after-name">Costruirti un'antenna</div>
   <div class="after-media">
     <img src="/img/antenna.png" alt="Antenna fai-da-te" />
   </div>
 </div>
 
 <div class="after-card">
-  <div class="after-name">Auto costruirti un nodo</div>
+  <div class="after-name">Costruirti un nodo</div>
   <div class="after-media">
     <img src="/img/nodo.png" alt="Nodo fai-da-te" />
   </div>
 </div>
 
 <div class="after-card">
-  <div class="after-name">Scrivere software per interagire con la mesh</div>
+  <div class="after-name">Sviluppare software per la mesh</div>
   <div class="after-media">
     <img src="/img/meshmonitor.png" alt="Software per monitorare la mesh" />
   </div>

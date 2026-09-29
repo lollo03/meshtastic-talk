@@ -21,13 +21,13 @@
 
 <v-clicks>
 
-La community Meshtastic più grande in Italia è **[LoraItalia](https://www.loraitalia.it/)**. Gestiscono un server **MQTT**, una wiki ed un gruppo Telegram
+La community Meshtastic più grande in Italia è **[LoraItalia](https://www.loraitalia.it/)**. Gestiscono un server **MQTT**, una wiki e un gruppo Telegram
 
 Tramite il server MQTT riescono a fornire anche una [mappa](https://tools.loraitalia.it/map) interattiva che permette a tutti di vedere lo stato attuale della mesh
 
 Mantengono anche un [fork](https://github.com/LoraItalia/loraitalia-firmware) del firmware Meshtastic originale con delle piccole modifiche per farlo funzionare meglio nella mesh italiana, ma l'installazione di questo firmware **non** è necessaria per poter partecipare
 
-La community è molto attiva e le loro configurazioni sono lo standard **de facto** in Italia
+La community è molto attiva e le loro configurazioni sono lo standard **_de facto_** in Italia
 
 > Tutti i dati mostrati nelle slide precedenti sono stati presi dai loro servizi web
 
@@ -47,13 +47,13 @@ Più piccola per numero di nodi (**182**)
 
 ---
 
-Utilizza modem preset **MediumFast** ma con dei canali diversi. L'obiettivo è di creare un'infrastruttura off-grid per il **soccorso** in montagna
+Utilizza il preset modem **Medium Fast** ma con dei canali diversi. L'obiettivo è creare un'infrastruttura off-grid per il **soccorso** in montagna
 
 <div class="flex items-center w-full flex-col mt-0">
     <img src="/img/sos.png" width="470"/>
 </div>
 
-È un'azienda, forniscono la connettività tramite Meshtastic ad enti per vari scopi, i.e. tracciamento animali, telemetria per rifugi
+È un'azienda, forniscono la connettività tramite Meshtastic ad enti per vari scopi, ad es. tracciamento animali, telemetria per rifugi
 
 Ma **chiunque** abbia un nodo Meshtastic può sfruttare la loro **infrastruttura** per mandare e ricevere messaggi
 

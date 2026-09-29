@@ -5,15 +5,15 @@
 <v-clicks>
 
 - **Firmware** per dispositivi basati su **ESP32** o **nRF52** equipaggiati con ricetrasmittente LoRa (Semtech SX126x o LR11xx)
-- **Software** APP android e iOS, web client
-- Demone _meshtasticd_ per permettere la creazione di nodi usando radio **SPI** o **USB** su Linux e macOS
+- **Software** App Android e iOS, web client
+- Il daemon _meshtasticd_ per permettere la creazione di nodi usando radio **SPI** o **USB** su Linux e macOS
 - Documentazione
 
 </v-clicks>
 
 <div v-click>
 
-> Ogni dispositivo meshtastic è un _nodo_: riceve ed inoltra i messaggi a tutti (flooding). La forza di meshtastic è che aggiungendo nodi è facilissimo espandere la rete. 
+> Ogni dispositivo Meshtastic è un _nodo_: riceve ed inoltra i messaggi a tutti (flooding). La forza di Meshtastic: aggiungere nodi per espandere la rete è semplicissimo. 
 
 <MeshtasticDevices />
 
@@ -93,12 +93,12 @@ Il vero successo di Meshtastic risiede nel suo equilibrio ideale: è **economico
 
 ## L'hardware
 
-Le schede meshtastic sono divise in due grandi categorie:
+Le schede Meshtastic sono divise in due grandi categorie:
 
 <v-click>
 
-- **ESP32**-Based: più potenti, dotati di wifi ma consumano di più
-- **nRF52**-Based: consumo energetico estremamente ridotto, è l'evoluzione dell'ESP32 in campo meshtastic
+- **Basate su ESP32**: più potenti, con Wi-Fi ma consumano di più
+- **Basate su nRF52**: consumi molto ridotti, ideali a batteria
 
 
 
@@ -205,7 +205,7 @@ La selezione è molto ampia, è facile vedere schede con anche:
     <img src="/img/faketek.png" width="320" class="flex-none self-center"/>
 </div>
 
-Puoi realizzare un nodo meshtastic unendo un microcontrollore e una radio LoRa. Oppure costruirti un [fakeTek](https://github.com/gargomoma/fakeTec_pcb).
+Puoi realizzare un nodo Meshtastic unendo un microcontrollore e una radio LoRa. Oppure costruire un [fakeTec](https://github.com/gargomoma/fakeTec_pcb).
 
 ---
 
@@ -228,13 +228,13 @@ Ogni radio è un **nodo** che riceve e **inoltra** i messaggi: insieme formano u
 
 ### Il routing
 
-Per i messaggi broadcast Meshtastic non ha una vera e propria logica di routing (**managed flooding**): ogni nodo ritrasmette il messaggio andando a decrementare un counter HOP (TTL).
+Per i messaggi broadcast Meshtastic non ha una vera e propria logica di routing (**managed flooding**): ogni nodo ritrasmette il messaggio andando a decrementare un contatore di hop (TTL).
 
 <img src="/img/routing.png"/>
 
 <div v-click>
 
-Ogni nodo ha un **ruolo** che può modificare questo comportamento, il default è **Client**, che va bene per il 90% dei casi.
+Ogni nodo ha un **ruolo** che può modificare questo comportamento; il default è **Client**, che va bene per il 90% dei casi.
 
 </div>
 
@@ -316,13 +316,13 @@ Ogni nodo ha un **ruolo** che può modificare questo comportamento, il default �
 
 <div v-click>
 
-Questi ultimi 3 vengono mandati **periodicamente** dal nodo, è possibile mandare una posizione **determinata** dall'utente o **disattivarla** completamente.
+Questi ultimi 3 vengono mandati **periodicamente** dal nodo, è possibile mandare una posizione **manuale** o **disattivarla** completamente.
 
 </div>
 
 <v-click>
 
-È **importante** non saturare la mesh di messaggi "inutili", **meno** pacchetti si mandano, più la mesh è **affidabile**.
+È **importante** non saturare la mesh di messaggi "inutili": **meno** pacchetti si mandano, più la mesh è **affidabile**.
 
 </v-click>
 
@@ -331,14 +331,14 @@ Questi ultimi 3 vengono mandati **periodicamente** dal nodo, è possibile mandar
 
 ### Canali ed impostazioni modem
 
-Le **impostazioni del modem** (es. **Long Fast**, **Medium Fast**) sono un'astrazione delle configurazioni del layer fisico LoRa (frequenza, ecc..). Tutti i nodi che condividono le stesse impostazioni modem possono ricevere e ritrasmettere i messaggi.
+Le **impostazioni del modem** (es. **Long Fast**, **Medium Fast**) sono un'astrazione delle configurazioni del livello fisico LoRa (frequenza, ecc.). Tutti i nodi che condividono le stesse impostazioni modem possono ricevere e ritrasmettere i messaggi.
 
 
 Il default è **Long Fast**, in Italia si utilizza **Medium Fast** (convenzione community) per limitare la saturazione dell'**airtime**.
 
 <div v-click>
 
-I **canali** non sono altro che delle impostazioni di criptografia per i messaggi. Se A e B vogliono comunicare, oltre alle stesse impostazioni del modem **devono** condividere lo stesso canale. Attenzione: **Tutti** i nodi ritrasmettono i messaggi anche di canali che non hanno, semplicemente non possono leggerli perché **criptati**!
+I **canali** non sono altro che delle impostazioni di cifratura per i messaggi. Se A e B vogliono comunicare, oltre alle stesse impostazioni del modem **devono** condividere lo stesso canale. Attenzione: **tutti** i nodi ritrasmettono i messaggi anche di canali che non hanno, semplicemente non possono leggerli perché **cifrati**!
 
 
 <div class="flex items-center w-full flex-col mt-0">
@@ -349,14 +349,14 @@ I **canali** non sono altro che delle impostazioni di criptografia per i messagg
 
 ---
 
-### Criptografia
+### Crittografia
 
 Due meccanismi distinti:
 
 <v-clicks>
 
 - **Canali**: cifratura simmetrica AES-256-CTR con chiave pre-condivisa (PSK) del canale. Chi conosce la PSK può leggere (e falsificare) i messaggi di quel canale
-- **Messaggi diretti** (dal FW 2.5): crittografia a chiave pubblica (x25519 + AES-CCM), criptati con la chiave pubblica del ricevente e firmati con la privata del mittente
+- **Messaggi diretti** (dal FW 2.5): crittografia a chiave pubblica (x25519 + AES-CCM), cifrati con la chiave pubblica del ricevente e firmati con la privata del mittente
 
 </v-clicks>
 
@@ -369,7 +369,7 @@ Importanti limitazioni:
 <v-click>
 
 - Identità basata su **Trust On First Use** (TOFU)
-- L'**header** del pacchetto NON è criptato
+- L'**header** del pacchetto NON è cifrato
 - Il canale **primario** di default usa una chiave nota ("AQ=="): senza cambiarla, tutto è pubblico
 
 <br>
@@ -408,7 +408,7 @@ La legalità **non** dipende dal software, ma da **quale servizio radioelettrico
 
 <v-clicks>
 
-- In Italia: **EU_868**, preset **MediumFast** su **869,525 MHz**.
+- In Italia: **EU_868**, preset **Medium Fast** su **869,525 MHz**.
 - Per l'uso SRD l'apparato *dovrebbe* essere **conforme CE** (direttiva RED 2014/53/UE) — ma **quasi nessun nodo fai-da-te lo è davvero**. Tuttavia i produttori si stanno man mano adattando
 - Duty cycle 10% = max **6 minuti di trasmissione all'ora** (vincolo di legge)
 - Le schede comuni però trasmettono a ~**158 mW** (22 dBm): è il **limite del chip** (SX1262)
@@ -419,9 +419,9 @@ La legalità **non** dipende dal software, ma da **quale servizio radioelettrico
 
 ### Di conseguenza
 
-- **Privato (non radioamatore)**: può criptare e usare 868 MHz (500 mW / 10%) oppure 433 MHz (10 mW / 10%).
+- **Privato (non radioamatore)**: può cifrare e usare 868 MHz (500 mW / 10%) oppure 433 MHz (10 mW / 10%).
 - **Radioamatore sui 70 cm (430–434)**: deve trasmettere **in chiaro**, niente cifratura.
-- **Radioamatore su 868**: opera da SRD: può criptare, ma senza i privilegi da radioamatore (potenze maggiori, ecc.).
+- **Radioamatore su 868**: opera da SRD; può cifrare, ma senza i privilegi da radioamatore (potenze maggiori, ecc.).
 
 <div v-click>
 

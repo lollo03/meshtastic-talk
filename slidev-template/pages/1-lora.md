@@ -20,6 +20,8 @@ Tuttavia, questi chip sono estremamente economici e la licenza non impone restri
 
 ---
 
+## Come funziona LoRa
+
 ![](/img/lora.png)
 
 <div v-click>
@@ -56,7 +58,7 @@ Sync Word: identifica la rete
 
 ---
 
-LoRa permette comunicazioni a distanze **assurde** (il record è di 1336 km, 331km per **Meshtastic**)
+LoRa permette comunicazioni a distanze **assurde** (il record è di 1.336 km, 331 km per **Meshtastic**)
 
 
 <div class="flex items-center w-full flex-col mt-0">
@@ -77,7 +79,7 @@ LoRa permette data rate fino a 27 kbps.
 
 <div v-click>
 
-Meshtastic nella sua configurazione radio tipica **in Italia** permette un valore di 3.52 kbps.
+Meshtastic nella sua configurazione radio tipica **in Italia** permette un valore di 3,52 kbps.
 
 </div>
 
