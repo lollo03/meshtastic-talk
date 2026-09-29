@@ -1,66 +1,9 @@
 
 ## Meshtastic in Italia
 
-<div class="grid grid-cols-3 gap-3 mt-5">
-
-<div class="stat-card">
-  <div class="stat-value">1.665</div>
-  <div class="stat-name">Nodi</div>
-  <div class="stat-desc">snapshot set 2026</div>
-</div>
-
-<div class="stat-card">
-  <div class="stat-value">107</div>
-  <div class="stat-name">Gateway MQTT</div>
-  <div class="stat-desc">solo il 6% è connesso ad Internet</div>
-</div>
-
-<div class="stat-card">
-  <div class="stat-value">39</div>
-  <div class="stat-name">Oltre 1.500 m</div>
-  <div class="stat-desc">vetta più alta: 2.849 m</div>
-</div>
-
-</div>
+<MeshStats />
 
 <MeshGrowth class="mt-4" />
-
-<style>
-.stat-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.2rem;
-  padding: 1rem 0.6rem 0.9rem;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.09);
-}
-
-.stat-value {
-  font-size: 2.4rem;
-  font-weight: 800;
-  line-height: 1;
-  color: #67ea94;
-  letter-spacing: -0.02em;
-}
-
-.stat-name {
-  font-size: 0.95rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  text-align: center;
-  line-height: 1.2;
-  margin-top: 0.25rem;
-}
-
-.stat-desc {
-  font-size: 0.7rem;
-  line-height: 1.3;
-  text-align: center;
-  opacity: 0.6;
-}
-</style>
 
 
 ---
@@ -94,7 +37,7 @@ La community è molto attiva e le loro configurazioni sono lo standard **de fact
 
 ## SOS-Italia
 
-A differenza di LoraItalia, è una mesh più strutturata e con uno scopo ben preciso.
+A differenza di LoraItalia, è una mesh più **strutturata** e con uno scopo ben preciso.
 <div class="flex items-center w-full flex-col mt-0">
     <img src="/img/mappa-sos.png" width="470"/>
 </div>
@@ -104,7 +47,7 @@ Più piccola per numero di nodi (**182**)
 
 ---
 
-Utilizza modem preset **MediumFast** ma con dei canali diversi. L'obiettivo è di creare un'infrastruttura off-grid per il soccorso in montagna
+Utilizza modem preset **MediumFast** ma con dei canali diversi. L'obiettivo è di creare un'infrastruttura off-grid per il **soccorso** in montagna
 
 <div class="flex items-center w-full flex-col mt-0">
     <img src="/img/sos.png" width="470"/>
@@ -112,7 +55,7 @@ Utilizza modem preset **MediumFast** ma con dei canali diversi. L'obiettivo è d
 
 È un'azienda, forniscono la connettività tramite Meshtastic ad enti per vari scopi, i.e. tracciamento animali, telemetria per rifugi
 
-Ma chiunque abbia un nodo Meshtastic può sfruttare la loro infrastruttura per mandare e ricevere messaggi
+Ma **chiunque** abbia un nodo Meshtastic può sfruttare la loro **infrastruttura** per mandare e ricevere messaggi
 
 ---
 

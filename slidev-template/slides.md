@@ -58,6 +58,10 @@ src: ./pages/3-stato.md
 ---
 
 ---
+src: ./pages/4-inizia.md
+---
+
+---
 layout: outro-classic
 hideInToc: true
 ---

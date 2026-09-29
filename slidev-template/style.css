@@ -1,0 +1,12 @@
+/*
+ * Stili globali della presentazione.
+ * Slidev inietta automaticamente questo file alla root dell'app.
+ * Nota: gli <style> dentro le slide sono scoped alla singola slide,
+ * quindi le regole condivise vanno messe qui.
+ */
+
+/* Bullet point in verde Meshtastic (`.slidev-layout` per non toccare la presenter UI) */
+.slidev-layout ul li::marker,
+.slidev-layout ol li::marker {
+  color: #67ea94;
+}
