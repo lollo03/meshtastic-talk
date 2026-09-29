@@ -1,5 +1,6 @@
 <script setup>
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from "vue"
+import { useNav } from "@slidev/client"
 // maplibre-gl v6 è ESM-only, senza export di default
 import * as maplibregl from "maplibre-gl"
 import "maplibre-gl/dist/maplibre-gl.css"
@@ -36,16 +37,22 @@ const props = defineProps({
   // zoom forzato; se null usa fitBounds sull'Italia
   zoom: { type: Number, default: null },
   // se true usa sempre l'immagine statica (utile per export/test)
-  forceFallback: { type: Boolean, default: false },
+  forceFallback: { type: Boolean, default: false }
 })
 
 const base = import.meta.env.BASE_URL
 const el = ref(null)
 
+// In export/print (PDF, PNG, PPTX...) la mappa WebGL non fa in tempo a
+// scaricare stile e tile da Internet prima che Slidev catturi la slide, che
+// risulterebbe vuota. In quel caso partiamo direttamente dall'immagine statica,
+// che è locale e quindi disponibile già all'evento `load` della pagina.
+const { isPrintMode } = useNav()
+
 // --- stato "offline" -------------------------------------------------------
 const isOffline = ref(typeof navigator !== "undefined" ? !navigator.onLine : false)
 const loadFailed = ref(false)
-const showFallback = computed(() => props.forceFallback || isOffline.value || loadFailed.value)
+const showFallback = computed(() => props.forceFallback || isPrintMode.value || isOffline.value || loadFailed.value)
 
 // esiste solo la versione dark delle mappe statiche
 const FALLBACK_IMG = "img/mappa-nodi-dark.png"
@@ -54,12 +61,12 @@ const fallbackSrc = computed(() => `${base}${FALLBACK_IMG}`)
 // --- costanti mappa --------------------------------------------------------
 const STYLES = {
   dark: "https://tiles.openfreemap.org/styles/dark",
-  light: "https://tiles.openfreemap.org/styles/positron",
+  light: "https://tiles.openfreemap.org/styles/positron"
 }
 
 const COLORS = {
   dark: { fill: "#67ea94", stroke: "rgba(4,48,28,.85)" },
-  light: { fill: "#f97316", stroke: "rgba(120,53,15,.8)" },
+  light: { fill: "#f97316", stroke: "rgba(120,53,15,.8)" }
 }
 
 // palette per ruolo (usata solo se colorBy === "role")
@@ -69,13 +76,13 @@ const ROLE_COLORS = {
   CLIENT_BASE: "#4cc9f0",
   TRACKER: "#b5179e",
   SENSOR: "#b5179e",
-  CLIENT_MUTE: "#9aa0a6",
+  CLIENT_MUTE: "#9aa0a6"
 }
 
 // MapLibre usa [lng, lat]: sud-ovest e nord-est dell'Italia
 const ITALY = [
   [6.3, 36.4],
-  [18.8, 47.2],
+  [18.8, 47.2]
 ]
 
 // tempo massimo per considerare "caricata" la mappa prima di passare al
@@ -151,7 +158,7 @@ function initMap() {
     attributionControl: { compact: true },
     interactive: props.interactive,
     // serve per catturare correttamente la canvas negli export/screenshot
-    preserveDrawingBuffer: true,
+    preserveDrawingBuffer: true
   })
   map = m
 
@@ -190,8 +197,8 @@ function initMap() {
       features: nodes.map(([lat, lon, role]) => ({
         type: "Feature",
         geometry: { type: "Point", coordinates: [lon, lat] },
-        properties: { role: role || "" },
-      })),
+        properties: { role: role || "" }
+      }))
     }
 
     m.addSource("nodi", { type: "geojson", data: geojson })
@@ -204,12 +211,12 @@ function initMap() {
         "circle-color": circleColor(),
         "circle-stroke-color": colors.stroke,
         "circle-stroke-width": 0.6,
-        "circle-opacity": 0.92,
-      },
+        "circle-opacity": 0.92
+      }
     })
   })
 
-  m.on("error", (e) => {
+  m.on("error", e => {
     if (map !== m) return
     const err = e?.error
     console.warn("[MeshNodeMap]", err ?? e)
@@ -253,7 +260,7 @@ function initMap() {
 }
 
 // quando lo stato di fallback cambia, distruggo o ricreo la mappa
-watch(showFallback, (v) => {
+watch(showFallback, v => {
   if (v) {
     destroyMap()
     if (ro) {
@@ -303,20 +310,11 @@ onBeforeUnmount(() => {
 
 <template>
   <div class="mesh-node-map">
-    <div
-      v-show="!showFallback"
-      ref="el"
-      class="mesh-node-map__canvas"
-      :style="{ height }"
-    />
-    <div
-      v-if="showFallback"
-      class="mesh-node-map__canvas mesh-node-map__fallback"
-      :style="{ height }"
-    >
+    <div v-show="!showFallback" ref="el" class="mesh-node-map__canvas" :style="{ height }" />
+    <div v-if="showFallback" class="mesh-node-map__canvas mesh-node-map__fallback" :style="{ height }">
       <img :src="fallbackSrc" alt="Mappa statica dei nodi Meshtastic in Italia" />
     </div>
-    <div v-if="showFallback" class="mesh-node-map__offline">
+    <div v-if="isOffline || loadFailed" class="mesh-node-map__offline">
       offline · mappa statica — Tiles &copy; Esri, &copy; OpenStreetMap contributors
     </div>
     <div v-if="$slots.default" class="mesh-node-map__caption">
