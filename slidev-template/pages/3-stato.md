@@ -6,7 +6,7 @@
 <MeshGrowth class="mt-4" />
 
 <div class="sources-credit">
-  Dati presi dai servizi web di <a href="https://www.loraitalia.it/">LoraItalia</a>
+  Dati estrapolati dai servizi web di <a href="https://www.loraitalia.it/">LoraItalia</a>
 </div>
 
 <style>
