@@ -19,7 +19,9 @@ routerMode: hash
 
 sourceCode: https://github.com/lollo03/meshtastic-talk
 
-license: CC-BY-SA-4.0
+license:
+  text: GPL-3.0-only
+  link: https://www.gnu.org/licenses/gpl-3.0.html
 
 credits:
   - name: Lorenzo Andreasi

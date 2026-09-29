@@ -49,6 +49,32 @@ Ma a noi tutto questo **non** interessa: Meshtastic offre un livello di astrazio
 
 </div>
 
+<style>
+/* Compatta i margini di questa slide per evitare il clipping in basso */
+.slidev-layout {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.slidev-layout h2 {
+  margin-bottom: 0.4rem;
+}
+.slidev-layout p {
+  margin-top: 0.35rem;
+  margin-bottom: 0.35rem;
+}
+.slidev-layout ul {
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+.slidev-layout li {
+  line-height: 1.45em;
+}
+.slidev-layout img {
+  max-height: 135px;
+  width: auto;
+}
+</style>
+
 <!--
 Spreading factor: La durata del "chirp" radio.
 Bandwidth (BW): larghezza di banda del segnale

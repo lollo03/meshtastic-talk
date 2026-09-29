@@ -1,3 +1,17 @@
+<!--
+  ATTRIBUZIONE / LICENZA
+  Questo componente è un adattamento in Vue di "MeshTopology" del sito e della
+  documentazione ufficiali di Meshtastic, distribuiti sotto GNU GPL-3.0-only.
+
+  Originale: https://github.com/meshtastic/meshtastic/blob/master/src/components/MeshTopology.tsx
+  Pagina:    https://meshtastic.org/docs/introduction/
+  Copyright: © Meshtastic LLC — Meshtastic® è un marchio registrato di Meshtastic LLC.
+  Licenza:   GPL-3.0-only (https://github.com/meshtastic/meshtastic/blob/master/LICENSE)
+
+  Le immagini dei dispositivi sono servite da https://flasher.meshtastic.org/img/devices/
+  (progetto Meshtastic, GPL-3.0). Gli asset sono usati qui a scopo dimostrativo.
+-->
+
 <script setup>
 import { ref, computed, onMounted, onBeforeUnmount } from "vue"
 

@@ -224,6 +224,27 @@ Ogni radio è un **nodo** che riceve e **inoltra** i messaggi: insieme formano u
 
 <MeshTopology />
 
+<div class="topo-credit">
+  Demo adattata da <a href="https://meshtastic.org/docs/introduction/">Meshtastic Docs</a> · sorgente <a href="https://github.com/meshtastic/meshtastic/blob/master/src/components/MeshTopology.tsx">MeshTopology.tsx</a> · © Meshtastic LLC · licenza <a href="https://github.com/meshtastic/meshtastic/blob/master/LICENSE">GPL-3.0</a>
+</div>
+
+<style>
+.topo-credit {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.7rem;
+  text-align: center;
+  font-family: monospace;
+  font-size: 0.6rem;
+  line-height: 1.3;
+  opacity: 0.5;
+}
+.topo-credit a {
+  border-bottom: none;
+}
+</style>
+
 ---
 
 ### Il routing
@@ -342,7 +363,7 @@ I **canali** non sono altro che delle impostazioni di cifratura per i messaggi. 
 
 
 <div class="flex items-center w-full flex-col mt-0">
-  <img src="/img/canali.png" width="470"/>
+  <img src="/img/canali.png" width="440"/>
 </div>
 
 </div>
@@ -405,6 +426,9 @@ La legalità **non** dipende dal software, ma da **quale servizio radioelettrico
 |---|---|---|
 | 868 MHz (869,4–869,65) | **max 500 mW ERP** (27 dBm) | ≤ 10% |
 | 433 MHz (433,05–434,79) | 10 mW ERP | ≤ 10% |
+
+<br>
+<br>
 
 <v-clicks>
 

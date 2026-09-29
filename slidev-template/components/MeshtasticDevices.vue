@@ -1,3 +1,14 @@
+<!--
+  ATTRIBUZIONE / LICENZA
+  Distribuito sotto GNU GPL-3.0-only (vedi LICENSE nella root del progetto).
+
+  Le immagini dei dispositivi in public/img/devices/ provengono da
+  https://flasher.meshtastic.org/img/devices/ (progetto Meshtastic, GPL-3.0)
+  e sono usate a scopo dimostrativo.
+
+  Copyright: © Meshtastic LLC — Meshtastic® è un marchio registrato di Meshtastic LLC.
+-->
+
 <script setup>
 const base = import.meta.env.BASE_URL
 
