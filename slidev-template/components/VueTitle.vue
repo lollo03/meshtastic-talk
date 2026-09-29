@@ -13,7 +13,7 @@ const base = import.meta.env.BASE_URL
     <h3 class="text-10! font-bold color-[#67EA94]"><span>Linux Day</span> 2026</h3>
   </a>
 
-  <h1 class="text-20! mt-6 text-center">
+  <h1 class="text-15! mt-6 text-center">
     <slot />
   </h1>
 </template>

@@ -29,6 +29,10 @@ credits:
     role: [author, speaker]
   - name: Roberto Bochet
     role: [specialThanks]
+  - name: Francesco Proia
+    role: [specialThanks]
+  - name: Nicola Ricciuti
+    role: [specialThanks]
 
 #####
 layout: intro-classic

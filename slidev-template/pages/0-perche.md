@@ -92,12 +92,11 @@ layout: center
 </style>
 
 ---
-layout: center
----
+
 
 # Cos'è Meshtastic?
 
-> An open source, off-grid, decentralized mesh network built to run on affordable, low-power devices. No cell towers. No internet. Just pure peer-to-peer connectivity.
+> An open source, off-grid, decentralized mesh network built to run on affordable, low-power devices. No cell towers. No internet. <br> Just pure peer-to-peer connectivity.
 
 <v-clicks>
 
